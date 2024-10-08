@@ -3,6 +3,6 @@
 
 @section('contenido')
 
-    <h3>TODO EL CONTENIDO SE AGREGARAN LOS CLIENTES</h3>
+    <h3>SE GESTIONARAN LOS INSTRUCTORES</h3>
 
 @endsection

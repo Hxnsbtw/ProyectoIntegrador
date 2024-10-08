@@ -92,6 +92,17 @@
             </ul>
           </li>
 
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle">
+              <i class="fas fa-truck"></i>
+              <div>Proveedores</div>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="{{route('proveedor')}}">Gestionar Proveedores</a></li>
+              <li><a href="{{url ('/Proveedor/Agregar')}}">Agregar Proveedor</a></li>
+            </ul>
+          </li>
+
           <!-- Sección de Análisis con submenú -->
           <li class="dropdown">
             <a href="#" class="dropdown-toggle">
@@ -108,12 +119,26 @@
             </ul>
           </li>
 
-          <li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle">
+              <i class="fas fa-cog"></i>
+              <div>Configuración</div>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#gestionar-inventario">Perfil</a></li>
+              <li><a href="#agregar-inventario">Salir del sistema</a></li>
+            </ul>
+          </li>
+          {{-- <li>
             <a href="#">
               <i class="fas fa-cog"></i>
               <div>Configuración</div>
             </a>
-          </li>
+            <ul class="dropdown-menu">
+              <li><a href="#Perfil">Perfil</a></li>
+              <li><a href="#Salir">Salir del Sistema</a></li>
+            </ul>
+          </li> --}}
 
           <li>
             <a href="#">
