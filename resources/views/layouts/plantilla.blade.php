@@ -6,12 +6,18 @@
 
     <link rel="icon" href="{{asset('Assets/Home/Logogym.jpg')}}" type="Assets/Home/jpg">
     <link rel="stylesheet" href={{asset("css/styles.css") }} />
+    <link rel="stylesheet" href={{asset('css/estilos-tablas.css')}}>  
+    <link rel="stylesheet" href={{asset('css/estilos-formularios.css')}}>
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
       integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
       crossorigin="anonymous"
     />
+
+    <!-- Scripts -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
     <title>Panel de Control</title>
   </head>
 
@@ -28,6 +34,7 @@
         <i class="fas fa-bell"></i>
         <div class="user">
           <img src={{asset('Assets/Dashboard/user1.png')}} alt="" />
+          <p>{{Auth::user()->name}}</p>
         </div>
       </div>
 
@@ -38,7 +45,7 @@
           <li>
             <a href="#">
               <i class="fas fa-th-large"></i>
-              <div>Dashboard</div>
+              <div href="{{route('dashboard')}}">Dashboard</div>
             </a>
           </li>
 
@@ -49,8 +56,8 @@
               <div>Clientes</div>
             </a>
             <ul class="dropdown-menu">
-              <li><a href="{{route('clientes')}}">Gestionar Clientes</a></li>
-              <li><a href="{{url ('/Clientes/Agregar')}}">Agregar Clientes</a></li>
+              <li><a href="{{route('clientes.index')}}">Gestionar Clientes</a></li>
+              <li><a href="#agregar-clientes">Agregar Clientes</a></li>
             </ul>
           </li>
 
@@ -61,8 +68,8 @@
               <div>Usuarios</div>
             </a>
             <ul class="dropdown-menu">
-              <li><a href="{{route('usuarios')}}">Gestionar Usuarios</a></li>
-              <li><a href="{{url ('/Usuarios/Agregar')}}">Agregar Usuarios</a></li>
+              <li><a href="#gestionar-usuarios">Gestionar Usuarios</a></li>
+              <li><a href="#agregar-usuarios">Agregar Usuarios</a></li>
             </ul>
           </li>
 
@@ -74,9 +81,9 @@
             </a>
             <ul class="dropdown-menu">
               <li>
-                <a href="{{route('instructores')}}">Gestionar Instructores</a>
+                <a href="#gestionar-instructores">Gestionar Instructores</a>
               </li>
-              <li><a href="{{url ('/Instructores/Agregar')}}">Agregar Instructores</a></li>
+              <li><a href="#agregar-instructores">Agregar Instructores</a></li>
             </ul>
           </li>
 
@@ -87,8 +94,8 @@
               <div>Inventario</div>
             </a>
             <ul class="dropdown-menu">
-              <li><a href="{{route('inventario')}}">Gestionar Inventario</a></li>
-              <li><a href="{{url ('/Inventario/Agregar')}}">Agregar Inventario</a></li>
+              <li><a href="#gestionar-inventario">Gestionar Inventario</a></li>
+              <li><a href="#agregar-inventario">Agregar Inventario</a></li>
             </ul>
           </li>
 
@@ -99,8 +106,10 @@
               <div>Proveedores</div>
             </a>
             <ul class="dropdown-menu">
-              <li><a href="{{route('proveedor')}}">Gestionar Proveedores</a></li>
-              <li><a href="{{url ('/Proveedor/Agregar')}}">Agregar Proveedor</a></li>
+              <li><a href="{{route('proveedores.index')}}">Gestionar Proveedores</a></li>
+              @can('proveedores.create')
+              <li><a href="{{route('proveedores.create')}}">Agregar Proveedor</a></li>
+              @endcan
             </ul>
           </li>
 
@@ -126,8 +135,14 @@
               <div>Configuración</div>
             </a>
             <ul class="dropdown-menu">
-              <li><a href="#gestionar-inventario">Perfil</a></li>
-              <li><a href="#agregar-inventario">Salir del sistema</a></li>
+              <li><a href="{{route('profile.edit')}}">Perfil</a></li>
+              <li>
+                <!-- Authentication -->
+              <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <input type="submit" value="Salir del Sistema" class="logout-link">
+            </form>
+              </li>
             </ul>
           </li>
 

@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Proveedor extends Model
 {
     use HasFactory;
+
+    protected $table = 'proveedores';
+    
+    protected $fillable = ['razon_social', 'NIT', 'contacto'];
+    //desactivar las marcas de tiempo
+    public $timestamps=false;
+
 }

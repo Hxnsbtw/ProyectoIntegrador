@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('proveedors', function (Blueprint $table) {
+        Schema::create('proveedores', function (Blueprint $table) {
             $table->id(); // Clave primaria
             $table->string('razon_social', 150)->unique(); // Razon Social, máximo 150 caracteres, única y obligatoria
             $table->string('NIT', 20)->unique(); // NIT, máximo 20 caracteres, único y obligatorio
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('proveedors');
+        Schema::dropIfExists('proveedores');
     }
 };
