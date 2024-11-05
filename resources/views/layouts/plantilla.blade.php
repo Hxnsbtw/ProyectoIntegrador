@@ -25,7 +25,8 @@
     <div class="conteiner">
       <div class="topbar">
         <div class="logo">
-          <h2>S U G U S</h2>
+          <h2>S U G U S</h2> 
+          <p>Bienvenido, {{Auth::user()->name}}.</p>
         </div>
         <div class="search">
           <input type="text" id="search" placeholder="Buscar aqui" />
@@ -34,7 +35,6 @@
         <i class="fas fa-bell"></i>
         <div class="user">
           <img src={{asset('Assets/Dashboard/user1.png')}} alt="" />
-          <p>{{Auth::user()->name}}</p>
         </div>
       </div>
 
@@ -57,7 +57,7 @@
             </a>
             <ul class="dropdown-menu">
               <li><a href="{{route('clientes.index')}}">Gestionar Clientes</a></li>
-              <li><a href="#agregar-clientes">Agregar Clientes</a></li>
+              <li><a href="{{route('clientes.create')}}">Agregar Clientes</a></li>
             </ul>
           </li>
 
@@ -68,8 +68,10 @@
               <div>Usuarios</div>
             </a>
             <ul class="dropdown-menu">
+              {{-- @can('proveedores.create') --}}
               <li><a href="#gestionar-usuarios">Gestionar Usuarios</a></li>
-              <li><a href="#agregar-usuarios">Agregar Usuarios</a></li>
+              <li><a href="{{ route('register') }}">Agregar Usuarios</a></li>
+              {{-- @endcan --}}
             </ul>
           </li>
 
@@ -81,9 +83,23 @@
             </a>
             <ul class="dropdown-menu">
               <li>
-                <a href="#gestionar-instructores">Gestionar Instructores</a>
+                <a href="{{route('instructores.index')}}">Gestionar Instructores</a>
               </li>
-              <li><a href="#agregar-instructores">Agregar Instructores</a></li>
+              <li><a href="{{route('instructores.create')}}">Agregar Instructores</a></li>
+            </ul>
+          </li>
+
+          <!-- Sección de clases con submenú -->
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle">
+              <i class="fas fa-dumbbell"></i>
+              <div>Asignacion de clases</div> 
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="{{route('clases.index')}}">Gestionar clases</a>
+              </li>
+              <li><a href="{{route('clases.create')}}">Agregar nueva clase</a></li>
             </ul>
           </li>
 
@@ -94,8 +110,8 @@
               <div>Inventario</div>
             </a>
             <ul class="dropdown-menu">
-              <li><a href="#gestionar-inventario">Gestionar Inventario</a></li>
-              <li><a href="#agregar-inventario">Agregar Inventario</a></li>
+              <li><a href="{{route('activos.index')}}">Gestionar Inventario</a></li>
+              <li><a href="{{route('activos.create')}}">Agregar Inventario</a></li>
             </ul>
           </li>
 
@@ -107,9 +123,9 @@
             </a>
             <ul class="dropdown-menu">
               <li><a href="{{route('proveedores.index')}}">Gestionar Proveedores</a></li>
-              @can('proveedores.create')
+              
               <li><a href="{{route('proveedores.create')}}">Agregar Proveedor</a></li>
-              @endcan
+              
             </ul>
           </li>
 
@@ -120,12 +136,12 @@
               <div>Análisis</div>
             </a>
             <ul class="dropdown-menu">
-              <li><a href="#reporte-clientes">Reporte de Clientes</a></li>
-              <li><a href="#reporte-usuarios">Reporte de Usuarios</a></li>
+              <li><a href="{{route('pdf.clientes')}}">Reporte de Clientes</a></li>
+              <li><a href="{{route('pdf.proveedores')}}">Reporte de Proveedores</a></li>
               <li>
-                <a href="#reporte-instructores">Reporte de Instructores</a>
+                <a href="{{route('pdf.instructores')}}">Reporte de Instructores</a>
               </li>
-              <li><a href="#reporte-inventario">Reporte de Inventario</a></li>
+              <li><a href="{{route('pdf.activos')}}">Reporte de Inventario</a></li>
             </ul>
           </li>
 

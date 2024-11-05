@@ -2,7 +2,11 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProveedorController;
-use App\Http\Controllers\ClientesController;
+use App\Http\Controllers\InstructorController;
+use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\ActivoController;
+use App\Http\Controllers\ClaseController;
+use App\Http\Controllers\PdfController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -15,14 +19,29 @@ Route::get('/dashboard', function () {
 
 Route::middleware('auth')->group(function () {
 
-    Route::resource('proveedores', ProveedorController::class);
+    //PROVEEDORES
+    Route::resource('/proveedores', ProveedorController::class);
+    //ACTIVOS
+    Route::resource('/activos', ActivoController::class);
+
+    Route::resource('clientes', ClienteController::class);
+
+    Route::resource('instructores', InstructorController::class);
+    
+    Route::resource('clases', ClaseController::class);
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    //REPORTES
+    Route::get('/pdfClientes', [PdfController::class, 'pdfClientes'])->name('pdf.clientes');   
+    Route::get('/pdfInstructores', [PdfController::class, 'pdfInstructores'])->name('pdf.instructores');
+    Route::get('/pdfProveedores', [PdfController::class, 'pdfProveedores'])->name('pdf.proveedores');
+    Route::get('/pdfActivos', [PdfController::class, 'pdfActivos'])->name('pdf.activos');
 });
 
-Route::get('/clientes', [ClientesController::class, 'index'])->name('clientes.index');
+
 
 
 require __DIR__.'/auth.php';

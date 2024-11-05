@@ -18,10 +18,11 @@ return new class extends Migration
         $table->string('Identificacion', 50)->unique(); // Número de Identificación, único, máximo 50 caracteres, obligatorio
         $table->string('celular', 20)->nullable(); // Celular, máximo 20 caracteres, opcional (nullable)
         $table->string('correo', 150)->nullable (); // Correo, único, máximo 150 caracteres, obligatorio
-        $table->string('Especializacion', 150)->nullable(); // Especialización, máximo 150 caracteres, opcional (nullable)
-        
+        $table->string('Especializacion', 150)->nullable(); // Especialización, máximo 150 caracteres, opcional (nullable)        
     });
 }
+
+
 
     /**
      * Reverse the migrations.
@@ -30,4 +31,5 @@ return new class extends Migration
     {
         Schema::dropIfExists('instructores');
     }
+    
 };

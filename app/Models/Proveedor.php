@@ -15,4 +15,9 @@ class Proveedor extends Model
     //desactivar las marcas de tiempo
     public $timestamps=false;
 
+    //relacion con activos: uno a muchos
+    public function Activo(){
+        return $this->hasMany(Activo::class,'id');
+    }
+
 }

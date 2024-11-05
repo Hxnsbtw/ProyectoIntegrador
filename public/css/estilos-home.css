@@ -22,7 +22,7 @@ body{
 /* header***************************************** */
 header {
     position: relative;
-    background: url(../img/fondo-main.jpg) no-repeat center center/cover;
+    background: url(../Assets/Home/fondo-main.jpg) no-repeat center center/cover;
     background-attachment: fixed; /* Hace que el fondo permanezca fijo */
     height: 100vh;
     display: flex;
@@ -225,7 +225,7 @@ section .image img {
 
 .feature-section {
     position: relative;
-    background: url(../img/fondo-main.jpg) no-repeat center center/cover;
+    background: url(../Assets/Home/fondo-main.jpg) no-repeat center center/cover;
     height: 100vh;
     display: flex;
     flex-direction: column; 

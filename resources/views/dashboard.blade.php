@@ -32,11 +32,11 @@
     </div>
     <div class="card">
       <div class="card-content">
-        <div class="number">$4500</div>
-        <div class="card-name">Ganancias</div>
+        <div class="number">12</div>
+        <div class="card-name">Proveedores</div>
       </div>
       <div class="icon-box">
-        <i class="fas fa-dollar-sign"></i>
+        <i class="fas fa-truck"></i>
       </div>
     </div>
   </div>

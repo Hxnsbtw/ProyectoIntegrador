@@ -17,15 +17,16 @@
                 <th>Peso</th>
                 <th>Altura</th>
                 <th>Fecha Ingreso</th>
+                <th>Opciones</th>
             </tr>
         </thead>
-        <tbody class="tabla-categorias">
+        <tbody class="tabla-clientes">
             @foreach ($clientes as $cliente)
             <tr>                
                 <td>{{$cliente->id}}</td>
                 <td>{{$cliente->nombre}}</td>
-                <td>{{$cliente->apeliido}}</td>
-                <td>{{$cliente->identificacion}}</td>
+                <td>{{$cliente->apellido}}</td>
+                <td>{{$cliente->NumeroIdentificacion}}</td>
                 <td>{{$cliente->correo}}</td>
                 <td>{{$cliente->celular}}</td>
                 <td>{{$cliente->peso}}</td>
@@ -33,16 +34,16 @@
                 <td>{{$cliente->fecha_ingreso}}</td>
                 
                 <td >
-                    <a href="#">
+                    <a href="{{route('clientes.show',[$cliente->id])}}">
                     <img src={{asset('Assets/view.png')}} alt="">
                  </a>
-                 <a href="#">
+                 <a href="{{route('clientes.edit',[$cliente->id])}}">
                     <img src={{asset('Assets/edit.png')}} alt="">
                  </a>
-                 <a href="#">
+                 <a href="{{route('clientes.destroy',[$cliente->id])}}">
                  </a>
-                 
-                 <form action="#" method="POST" onsubmit="return confimarEliminacion()">
+                 <!-- Eliminar Instructor -->
+                 <form action="{{route('clientes.destroy',[$cliente->id])}}" method="POST" onsubmit="return confimarEliminacion()">
 
                     {{-- permite gemrar el token para enviar por post --}}
                     @csrf
@@ -62,5 +63,5 @@
             @endforeach           
         </tbody>
         {{-- paginacion links --}}    
-
+    </table>    
 @endsection

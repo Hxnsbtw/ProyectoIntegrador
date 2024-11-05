@@ -10,12 +10,7 @@
                 <p> {{$proveedor->NIT}}</p>
                 <p> {{$proveedor->contacto}}</p>
             </div>
-        
-    
         </div>
-
 </section>
- 
-    
 </div>
 @endsection

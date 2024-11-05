@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Clientes extends Model
+class Instructor extends Model
 {
     use HasFactory;
-    protected $table = 'clientes';
+    protected $table = 'instructores';
     
-    protected $fillable = ['nombre', 'apeliido', 'identificacion', 'correo', 'celular', 'peso', 'altura','fecha_ingreso'];
+    protected $fillable = ['nombre', 'apeliido', 'identificacion', 'celular', 'correo', 'Especializacion'];
     //desactivar las marcas de tiempo
     public $timestamps=false;
 }

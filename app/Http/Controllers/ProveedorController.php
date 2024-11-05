@@ -19,7 +19,6 @@ class ProveedorController extends Controller
     public function index(){
         
         $proveedores = Proveedor::orderBy('id','ASC')->paginate(10);    
-
         return view ('proveedores.proveedorIndex', compact('proveedores'));
     }
 
@@ -80,20 +79,20 @@ class ProveedorController extends Controller
     {
         //
         // Validar los datos del formulario
-    $validatedData = $request->validate([
+        $validatedData = $request->validate([
         'razon_social' => 'required|max:255',
         'NIT' => 'required',
         'contacto' => 'required',
     ]);
 
     // Buscar el proveedor por ID y actualizar
-    $proveedor = Proveedor::findOrFail($id);
-    $proveedor->razon_social = $validatedData['razon_social'];
-    $proveedor->NIT = $validatedData['NIT'];
-    $proveedor->contacto = $validatedData['contacto'];
+        $proveedor = Proveedor::findOrFail($id);
+        $proveedor->razon_social = $validatedData['razon_social'];
+        $proveedor->NIT = $validatedData['NIT'];
+        $proveedor->contacto = $validatedData['contacto'];
 
     // Guardar el proveedor actualizado
-    $proveedor->save();
+        $proveedor->save();
 
     // Redirigir a la lista de proveedores con un mensaje de éxito
     return redirect()->route('proveedores.index')->with('success', 'Proveedor actualizado correctamente.');
