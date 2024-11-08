@@ -5,7 +5,7 @@
 <div class="cards">
     <div class="card">
       <div class="card-content">
-        <div class="number">1217</div>
+        <div class="number">{{ $totalClientes }}</div>
         <div class="card-name">Clientes</div>
       </div>
       <div class="icon-box">
@@ -14,7 +14,7 @@
     </div>
     <div class="card">
       <div class="card-content">
-        <div class="number">42</div>
+        <div class="number">{{ $totalInstructores }}</div>
         <div class="card-name">Instructores</div>
       </div>
       <div class="icon-box">
@@ -23,7 +23,7 @@
     </div>
     <div class="card">
       <div class="card-content">
-        <div class="number">71</div>
+        <div class="number">{{ $totalUsuarios }}</div>
         <div class="card-name">Usuarios</div>
       </div>
       <div class="icon-box">
@@ -32,7 +32,7 @@
     </div>
     <div class="card">
       <div class="card-content">
-        <div class="number">12</div>
+        <div class="number">{{ $totalUsuarios }}</div>
         <div class="card-name">Proveedores</div>
       </div>
       <div class="icon-box">
@@ -48,7 +48,7 @@
       </div>
     </div>
     <div class="chart" id="doughnut-chart">
-      <h2>Empleados</h2>
+      <h2>Datos</h2>
       <div>
         <canvas id="doughnut"></canvas>
       </div>

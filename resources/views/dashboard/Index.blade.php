@@ -155,7 +155,7 @@
         <div class="cards">
           <div class="card">
             <div class="card-content">
-              <div class="number">1217</div>
+              <div class="number">121</div>
               <div class="card-name">Clientes</div>
             </div>
             <div class="icon-box">

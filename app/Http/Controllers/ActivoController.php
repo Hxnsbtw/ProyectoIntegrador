@@ -52,16 +52,14 @@ class ActivoController extends Controller
     }
 
     // Crear y guardar el nuevo activo
-    $activo = new Activo;
-    $activo->nombre = $request->nombre;
-    $activo->serial = $request->serial;
-    $activo->estado = $request->estado;
-    $activo->imagen = $nombreImagen;
-    $activo->proveedor_id = $request->proveedor_id;
+        $activo = new Activo;
+        $activo->nombre = $request->nombre;
+        $activo->serial = $request->serial;
+        $activo->estado = $request->estado;
+        $activo->imagen = $nombreImagen;
+        $activo->proveedor_id = $request->proveedor_id;
 
-    $activo->save();
-
-    
+        $activo->save();
 
     // Redirigir a la lista de activos con un mensaje de éxito
     return redirect()->route('activos.index')->with('success', 'Activo creado exitosamente');

@@ -7,6 +7,7 @@ use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ActivoController;
 use App\Http\Controllers\ClaseController;
 use App\Http\Controllers\PdfController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -39,9 +40,17 @@ Route::middleware('auth')->group(function () {
     Route::get('/pdfInstructores', [PdfController::class, 'pdfInstructores'])->name('pdf.instructores');
     Route::get('/pdfProveedores', [PdfController::class, 'pdfProveedores'])->name('pdf.proveedores');
     Route::get('/pdfActivos', [PdfController::class, 'pdfActivos'])->name('pdf.activos');
+
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    Route::get('/api/grafico-datos', function () {
+        return response()->json([
+            'clientes' => \App\Models\Cliente::count(),
+            'instructores' => \App\Models\Instructor::count(),
+            'usuarios' => \App\Models\User::count(),
+            'proveedores' => \App\Models\Proveedor::count(),
+        ]);
+    });
 });
-
-
-
 
 require __DIR__.'/auth.php';

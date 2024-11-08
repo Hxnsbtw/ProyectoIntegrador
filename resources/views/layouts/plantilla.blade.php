@@ -123,9 +123,9 @@
             </a>
             <ul class="dropdown-menu">
               <li><a href="{{route('proveedores.index')}}">Gestionar Proveedores</a></li>
-              
+              @can('proveedores.create')
               <li><a href="{{route('proveedores.create')}}">Agregar Proveedor</a></li>
-              
+              @endcan
             </ul>
           </li>
 
