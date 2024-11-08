@@ -1,11 +1,40 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## Descripción sobre el sistema creado
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Este sistema es una aplicación web diseñada para gestionar de forma eficiente la administración de un gimnasio, incluyendo la organización de clases, instructores, clientes, usuarios y proveedores. Permite realizar operaciones como la creación, edición y eliminación de registros, y facilita la visualización de datos mediante gráficos y reportes en PDF, los cuales son generados dinámicamente a partir de la información en la base de datos. Al usar la arquitectura MVC y el framework Laravel, el sistema es escalable, modular y permite mantener una separación clara entre la lógica de negocio y la presentación, asegurando una gestión ágil y precisa de los recursos del gimnasio.
+
+Algunas de las caracteristicas del sistema son:
+
+Gestión Centralizada: Permite administrar clases, instructores, clientes y proveedores desde un solo lugar, simplificando el flujo de trabajo y reduciendo errores.
+
+Visualización de Datos en Tiempo Real: Incluye gráficos y reportes PDF que reflejan los datos actuales, brindando información clara para la toma de decisiones rápidas y efectivas.
+
+Escalabilidad y Modularidad: La arquitectura MVC de Laravel facilita la expansión y el mantenimiento del sistema, adaptándose a las necesidades crecientes del gimnasio.
+
+Interfaz Intuitiva y Accesible: Diseñada para ser fácil de usar, la aplicación optimiza la experiencia de usuario y permite a los administradores interactuar eficientemente con el sistema.
+
+## Tecnologías Utilizadas
+
+Este sistema está construido utilizando las siguientes tecnologías:
+
+PHP: Lenguaje de programación para el desarrollo backend.
+Laravel: Framework de PHP que facilita el desarrollo de aplicaciones web mediante el patrón MVC.
+phpMyAdmin: Sistema de gestión de bases de datos utilizado para almacenar y gestionar la información.
+JavaScript (Chart.js): Librería de JavaScript para la visualización de gráficos interactivos.
+HTML5 y CSS3: Para la estructura y el diseño visual de la interfaz.
+Bootstrap: Framework de CSS para facilitar la creación de una interfaz responsive y atractiva.
+Composer: Gestor de dependencias de PHP.
+npm: Gestor de paquetes de Node.js utilizado para administrar dependencias de JavaScript.
+
+## Dependencias Instaladas 
+
+barryvdh/laravel-dompdf: Permite la generación de archivos PDF desde vistas de Laravel.
+spatie/laravel-permission: Paquete que es una biblioteca que facilita la gestión de roles y permisos en aplicaciones Laravel.
+Extensiones
+Live Server: Nos permitio crear un servidor para alojar nuestra pagina web
+Prettier: Permitio a configurar las reglas que se aplicarán a su código y darle formato.
+
+
+Estas son las principales tecnologías y dependencias utilizadas para el desarrollo de este sistema, lo cual debería facilitar la instalación y configuración de entornos similares para otros colaboradores.
 
 ## About Laravel
 
@@ -29,37 +58,6 @@ You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you
 
 If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
 ## License
 
